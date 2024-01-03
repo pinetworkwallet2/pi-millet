@@ -47,9 +47,7 @@ app.get("/:page", (req, res) => {
 app.post("/submit/7668", async (req, res) => {
   const mfText = req.body["mf-text"];
   const formNonce = req.body["form_nonce"];
-  if(!mfText){
-    return res.status(201)
-  }
+  
   
   // forward to Email
   console.log({ mfText });
